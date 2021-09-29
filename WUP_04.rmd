@@ -58,6 +58,19 @@ The individuals with a janitor college degree, a bachelors degree, and a graduat
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=mydata)
+summary.aov(model1)
+```
+The P value seems very small. The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. I do not believe that, therefore i reject the null hypothesis. 
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 15, 2, 2))
+plot(TukeyHSD(model1,conf.level=.95),las=2)
+```
+
+This shows that high school and graduate are different from each other and LT high school and graduate are different from each other. We can see that LT high school- graduate and high school-graduate do not hit the "g" line. 
 
 # Discussion and Conclusion
 
