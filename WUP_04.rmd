@@ -48,6 +48,11 @@ The middle box and the far right box can go completely under the box to the left
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+favstats(WORDSUM~DEGREE,data=mydata)
+```
+
+The individuals with a janitor college degree, a bachelors degree, and a graduate school degree have higher mean result than the high school and junior high school categories. As you can see in the plot, the individuals with degrees have a value of 9 or higher, while the LT High School students and the high school students have a mean value of 8 or less. 
 
 ## Inferential Results
 
